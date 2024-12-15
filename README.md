@@ -51,12 +51,12 @@
   </tr>
 </table>
 
-<div align="center">
-  <div>
+<div style="display: flex; justify-content: center;">
+  <div style="margin-right: 10px;">
     <img src="https://github-readme-stats.vercel.app/api?username=Sanskar-Bhushankar&show_icons=true&theme=radical&count_private=true&border_radius=10&card_width=500&include_all_commits=true" alt="GitHub Stats" />
   </div>
 
-  <div>
+  <div style="margin-left: 10px;">
     <img src="https://github-readme-streak-stats.herokuapp.com/?user=Sanskar-Bhushankar&theme=radical&border_radius=10" alt="GitHub Streak Stats" />
   </div>
 </div>
