@@ -1,11 +1,9 @@
 <h1 align="center">Hi 👋, I'm Sanskar-Bhushankar</h1>
-<h3 align="center">From Mumbai,India</h3>
+<h3 align="center">From Mumbai, India</h3>
 
-<div align="center">
-
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&pause=1000&width=435&lines=WEB+DEV;AWS+Enthusiast)](https://git.io/typing-svg)
-
-</div>
+<p align="center">
+  I'm a MERN Stack Developer currently pursuing MSc in Data Science and learning AWS Cloud Practitioner. 
+</p>
 
 <div>
   <div align="center">
@@ -52,3 +50,13 @@
     </td>
   </tr>
 </table>
+
+<div align="center">
+  <div>
+    <img src="https://github-readme-stats.vercel.app/api?username=Sanskar-Bhushankar&show_icons=true&theme=radical&count_private=true&border_radius=10&card_width=500&include_all_commits=true" alt="GitHub Stats" />
+  </div>
+
+  <div>
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Sanskar-Bhushankar&theme=radical&border_radius=10" alt="GitHub Streak Stats" />
+  </div>
+</div>
