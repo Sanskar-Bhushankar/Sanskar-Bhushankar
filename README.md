@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm Sanskar-Bhushankar</h1>
+<h1 align="center">Hiie 👋, I'm Sanskar-Bhushankar</h1>
 <h3 align="center">From Mumbai, India</h3>
 
 <p align="center">
@@ -51,12 +51,16 @@
   </tr>
 </table>
 
-<div style="display: flex; justify-content: center;">
-  <div style="margin-right: 10px;">
-    <img src="https://github-readme-stats.vercel.app/api?username=Sanskar-Bhushankar&show_icons=true&theme=radical&count_private=true&border_radius=10&card_width=500&include_all_commits=true" alt="GitHub Stats" />
-  </div>
+<table style="width: 100%;">
+  <tr>
+    <td style="text-align: center; padding: 10px;">
+      <img src="https://github-readme-stats.vercel.app/api?username=Sanskar-Bhushankar&show_icons=true&theme=radical&count_private=true&border_radius=10&card_width=500&include_all_commits=true" alt="GitHub Stats" />
+    </td>
+    <td style="text-align: center; padding: 10px;">
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=Sanskar-Bhushankar&theme=radical&border_radius=10" alt="GitHub Streak Stats" />
+    </td>
+  </tr>
+</table>
 
-  <div style="margin-left: 10px;">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Sanskar-Bhushankar&theme=radical&border_radius=10" alt="GitHub Streak Stats" />
-  </div>
-</div>
+
+
