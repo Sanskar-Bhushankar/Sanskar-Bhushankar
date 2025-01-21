@@ -1,8 +1,9 @@
-<h1 align="center">Hiie 👋, I'm Sanskar-Bhushankar</h1>
+<img src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/d48893bd-0757-481c-8d7e-ba3e163feae7" />
+<h1 align="center">Hiiee 👋, I'm Sanskar</h1>
 <h3 align="center">From Mumbai, India</h3>
 
 <p align="center">
-  I'm a MERN Stack Developer currently pursuing MSc in Data Science and learning AWS Cloud Practitioner. 
+  I'm a WEB Developer and a Data Wizard currently pursuing MSc in Data Science While learning AWS Cloud Practitioner. 
 </p>
 
 <div>
