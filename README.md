@@ -23,6 +23,109 @@
   </div>
 </div>
 
+<table border="1" cellpadding="10" style="text-align:center;">
+        <tr>
+            <td>
+                <a href="https://learn.microsoft.com/en-us/users/sanskarbhushankar-9470/" target="_blank">
+                    <img src="https://learn.microsoft.com/en-us/training/achievements/microsoft-learn-ai-skills-challenge-november-2024-badge.png" alt="Badge" width="70" height="70"/>
+                </a>
+                <p>
+                    AI Skills Challenge | November 2024<br>
+                    12/3/2024
+                </p>
+            </td>
+            <td>
+                <a href="https://learn.microsoft.com/en-us/users/sanskarbhushankar-9470/" target="_blank">
+                    <img src="https://learn.microsoft.com/en-us/training/achievements/generic-trophy.svg" alt="Trophy" width="70" height="70"/>
+                </a>
+                <p>
+                    Govern and protect sensitive information in the age of AI<br>
+                    10/9/2024
+                </p>
+            </td>
+            <td>
+                <a href="https://learn.microsoft.com/en-us/users/sanskarbhushankar-9470/" target="_blank">
+                    <img src="https://learn.microsoft.com/en-us/training/achievements/extract-data-from-forms-use-form-recognizer.svg" alt="Trophy" width="70" height="70"/>
+                </a>
+                <p>
+                    Develop solutions with Azure AI Document Intelligence<br>
+                    9/30/2024
+                </p>
+            </td>
+            <td>
+                <a href="https://learn.microsoft.com/en-us/users/sanskarbhushankar-9470/" target="_blank">
+                    <img src="https://learn.microsoft.com/en-us/training/achievements/get-started-ai-fundamentals.svg" alt="Badge" width="70" height="70"/>
+                </a>
+                <p>
+                    Fundamental AI Concepts | Microsoft Azure<br>
+                    9/28/2024
+                </p>
+            </td>
+            <td>
+                <a href="https://learn.microsoft.com/en-us/users/sanskarbhushankar-9470/" target="_blank">
+                    <img src="https://learn.microsoft.com/en-us/training/achievements/generic-badge.svg" alt="Badge" width="70" height="70"/>
+                </a>
+                <p>
+                    Fundamentals of Azure AI services<br>
+                    9/28/2024
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://learn.microsoft.com/en-us/users/sanskarbhushankar-9470/" target="_blank">
+                    <img src="https://learn.microsoft.com/en-us/training/achievements/analyze-receipts-form-recognizer.svg" alt="Badge" width="70" height="70"/>
+                </a>
+                <p>
+                    Fundamentals of Azure AI Document Intelligence<br>
+                    9/29/2024
+                </p>
+            </td>
+            <td>
+                <a href="https://learn.microsoft.com/en-us/users/sanskarbhushankar-9470/" target="_blank">
+                    <img src="https://learn.microsoft.com/en-us/training/achievements/plan-form-recognizer-solution.svg" alt="Badge" width="70" height="70"/>
+                </a>
+                <p>
+                    Plan an Azure AI Document Intelligence solution<br>
+                    9/29/2024
+                </p>
+            </td>
+            <td>
+                <a href="https://learn.microsoft.com/en-us/users/sanskarbhushankar-9470/" target="_blank">
+                    <img src="https://learn.microsoft.com/en-us/training/achievements/create-composed-form-recognizer-model.svg" alt="Badge" width="70" height="70"/>
+                </a>
+                <p>
+                    Create a composed Document intelligence model<br>
+                    9/30/2024
+                </p>
+            </td>
+            <td>
+                <a href="https://learn.microsoft.com/en-us/users/sanskarbhushankar-9470/" target="_blank">
+                    <img src="https://learn.microsoft.com/en-us/training/achievements/generic-badge.svg" alt="Badge" width="70" height="70"/>
+                </a>
+                <p>
+                    Manage compliance with Microsoft Purview for Copilot for Microsoft 365<br>
+                    10/9/2024
+                </p>
+            </td>
+            <td>
+                <a href="https://learn.microsoft.com/en-us/users/sanskarbhushankar-9470/" target="_blank">
+                    <img src="https://learn.microsoft.com/en-us/training/achievements/generic-badge.svg" alt="Badge" width="70" height="70"/>
+                </a>
+                <p>
+                    Manage AI data security challenges with Microsoft Purview<br>
+                    10/7/2024
+                </p>
+            </td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
 <table>
   <tr>
     <td colspan="2">
