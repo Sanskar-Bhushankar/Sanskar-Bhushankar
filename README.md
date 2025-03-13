@@ -25,6 +25,15 @@
 
 <table border="1" cellpadding="10" style="text-align:center;">
         <tr>
+          <td>
+                <a href="https://www.credly.com/badges/3053c78e-1c1b-45e4-ba51-c642e479f498/public_url" target="_blank">
+                    <img src="https://images.credly.com/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="Badge" width="70" height="70"/>
+                </a>
+                <p>
+                    AWS Certified Cloud Practitioner<br>
+                    27/2/2025
+                </p>
+            </td>
             <td>
                 <a href="https://learn.microsoft.com/en-us/users/sanskarbhushankar-9470/" target="_blank">
                     <img src="https://learn.microsoft.com/en-us/training/achievements/microsoft-learn-ai-skills-challenge-november-2024-badge.png" alt="Badge" width="70" height="70"/>
