@@ -126,7 +126,20 @@
                     10/7/2024
                 </p>
             </td>
+          <td>
+                <a href="https://learn.microsoft.com/en-us/users/sanskarbhushankar-9470/" target="_blank">
+                    <img src="https://assets.leetcode.com/static_assets/others/Top_SQL_50.gif" alt="Badge" width="70" height="70"/>
+                </a>
+                <p>
+                    SQL 50 <br/>Leetcode<br>
+                    2024-09-30
+                  <br>
+                  <br>
+                  <br>
+                </p>
+            </td>
         </tr>
+        
     </table>
 
 
