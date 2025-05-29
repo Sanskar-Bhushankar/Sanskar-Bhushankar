@@ -133,13 +133,12 @@
                 <p>
                     SQL 50 <br/>Leetcode<br>
                     2024-09-30
-                  <br>
-                  <br>
-                  <br>
+                  <br/>
+                  <br/>
+                  <br/>
                 </p>
             </td>
         </tr>
-        
     </table>
 
 
