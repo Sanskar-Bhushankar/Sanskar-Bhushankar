@@ -34,6 +34,15 @@
                     27/2/2025
                 </p>
             </td>
+          <td>
+                <a href="https://learn.microsoft.com/en-us/users/sanskarbhushankar-9470/" target="_blank">
+                    <img src="https://images.credly.com/images/44e2c252-5d19-4574-9646-005f7225bf53/image.png" alt="Trophy" width="80" height="80"/>
+                </a>
+                <p>
+                   AWS re/Start Graduate <br>
+                  20/1/2025
+                </p>
+            </td>
             <td>
                 <a href="https://learn.microsoft.com/en-us/users/sanskarbhushankar-9470/" target="_blank">
                     <img src="https://learn.microsoft.com/en-us/training/achievements/microsoft-learn-ai-skills-challenge-november-2024-badge.png" alt="Badge" width="70" height="70"/>
@@ -43,15 +52,15 @@
                     12/3/2024
                 </p>
             </td>
-            <td>
+<!--             <td>
                 <a href="https://learn.microsoft.com/en-us/users/sanskarbhushankar-9470/" target="_blank">
-                    <img src="https://learn.microsoft.com/en-us/training/achievements/generic-trophy.svg" alt="Trophy" width="70" height="70"/>
+                    <img src="https://images.credly.com/images/44e2c252-5d19-4574-9646-005f7225bf53/image.png" alt="Trophy" width="80" height="80"/>
                 </a>
                 <p>
-                    Govern and protect sensitive information in the age of AI<br>
-                    10/9/2024
+                   AWS re/Start Graduate <br>
+                   Date issued: January 20, 2025
                 </p>
-            </td>
+            </td> -->
             <td>
                 <a href="https://learn.microsoft.com/en-us/users/sanskarbhushankar-9470/" target="_blank">
                     <img src="https://learn.microsoft.com/en-us/training/achievements/extract-data-from-forms-use-form-recognizer.svg" alt="Trophy" width="70" height="70"/>
@@ -128,25 +137,34 @@
             </td>
           <td>
                 <a href="https://learn.microsoft.com/en-us/users/sanskarbhushankar-9470/" target="_blank">
-                    <img src="https://assets.leetcode.com/static_assets/others/Top_SQL_50.gif" alt="Badge" width="70" height="70"/>
+                    <img src="https://learn.microsoft.com/en-us/training/achievements/generic-trophy.svg" alt="Trophy" width="70" height="70"/>
                 </a>
                 <p>
-                    SQL 50 <br/>Leetcode<br>
-                    2024-09-30
-                  <br/>
-                  <br/>
-                  <br/>
+                    Govern and protect sensitive information in the age of AI<br>
+                    10/9/2024
                 </p>
             </td>
         </tr>
   <tr>
-     <td>
+       <td>
                 <a href="https://learn.microsoft.com/en-us/users/sanskarbhushankar-9470/" target="_blank">
                     <img src="https://assets.leetcode.com/static_assets/marketing/2024-100-new.gif" alt="Badge" width="70" height="70"/>
                 </a>
                 <p>
                     100 Days of Code <br/>Leetcode<br>
                     2024-11-17
+                  <br/>
+                  <br/>
+                </p>
+          </td>
+    <td>
+                <a href="https://learn.microsoft.com/en-us/users/sanskarbhushankar-9470/" target="_blank">
+                    <img src="https://assets.leetcode.com/static_assets/others/Top_SQL_50.gif" alt="Badge" width="70" height="70"/>
+                </a>
+                <p>
+                    SQL 50 <br/>Leetcode<br>
+                    2024-09-30
+                  <br/>
                   <br/>
                   <br/>
                 </p>
