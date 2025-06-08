@@ -15,7 +15,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '18' 
 
       - name: Install dependencies
         run: |
@@ -24,10 +24,10 @@ jobs:
       - name: Fetch latest tweet and update README
         env:
           CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
-          CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+          CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }} 
           ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
           ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
-          TWITTER_HANDLE: sanskar2804 
+          TWITTER_HANDLE: sanskar2804
         run: |
           node -e '
             const { TwitterApi } = require("twitter-api-v2");
@@ -109,9 +109,10 @@ jobs:
           '
 
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: EndBug/add-and-commit@v9
         with:
-          branch: main # Or your default branch name (e.g., master)
+          branch: main 
           message: "docs: Update latest tweet in README with media"
-          commit_user_name: github-actions[bot]
-          commit_user_email: github-actions[bot]@users.noreply.github.com
+          committer_name: github-actions[bot]
+          committer_email: github-actions[bot]@users.noreply.github.com
+          add: "README.md" 
