@@ -2,12 +2,13 @@ name: Update Latest Tweet
 
 on:
   schedule:
-    - cron: '0 */12 * * *'
-  workflow_dispatch: 
+    - cron: '0 */12 * * *'   # Run every 12 hours
+  workflow_dispatch:         # Allow manual trigger
 
 jobs:
   update-tweet:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -15,110 +16,24 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18' 
+          node-version: '18'
 
       - name: Install dependencies
-        run: |
-          npm install twitter-api-v2 # Install the Twitter API client library
+        run: npm install twitter-api-v2
 
       - name: Fetch latest tweet and update README
         env:
           CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
-          CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }} 
+          CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
           ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
           ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
-          TWITTER_HANDLE: sanskar2804
-        run: |
-          node -e '
-            const { TwitterApi } = require("twitter-api-v2");
-const fs = require("fs");
-
-(async () => {
-  try {
-    const client = new TwitterApi({
-      appKey: process.env.CONSUMER_KEY,
-      appSecret: process.env.CONSUMER_SECRET,
-      accessToken: process.env.ACCESS_TOKEN,
-      accessSecret: process.env.ACCESS_TOKEN_SECRET,
-    });
-
-    // Hardcoded Twitter handle
-    const twitterHandle = "sanskar2804";
-
-    // Get user info by handle
-    const { data: user } = await client.v2.userByUsername(twitterHandle);
-    if (!user) {
-      console.error("Twitter user not found.");
-      process.exit(1);
-    }
-
-    // Fetch latest 5 tweets excluding replies and retweets
-    const timeline = await client.v2.userTimeline(user.id, {
-      max_results: 5,
-      exclude: ["replies", "retweets"],
-      expansions: ["attachments.media_keys"],
-      "tweet.fields": ["created_at", "text", "entities", "attachments"],
-      "media.fields": ["url", "preview_image_url", "type"],
-    });
-
-    if (!timeline.data || timeline.data.length === 0) {
-      console.log("No tweets found or unable to fetch latest tweet.");
-      process.exit(0);
-    }
-
-    const latestTweet = timeline.data[0];
-    let tweetText = latestTweet.text;
-
-    // Linkify URLs inside tweet text
-    if (latestTweet.entities?.urls) {
-      for (const url of latestTweet.entities.urls) {
-        tweetText = tweetText.replace(url.url, `[${url.display_url || url.url}](${url.expanded_url})`);
-      }
-    }
-
-    const tweetUrl = `https://twitter.com/${twitterHandle}/status/${latestTweet.id}`;
-
-    // Handle media if any
-    let mediaContent = "";
-    if (timeline.includes?.media?.length) {
-      const media = timeline.includes.media[0]; // Only first media for simplicity
-      if (media.type === "photo" && media.url) {
-        mediaContent = `\n\n![Tweet Image](${media.url})`;
-      } else if ((media.type === "video" || media.type === "animated_gif") && media.preview_image_url) {
-        mediaContent = `\n\n[![Video Preview](${media.preview_image_url})](${tweetUrl})`;
-      }
-    }
-
-    const formattedTweet = `🐦 Latest Tweet:\n\n> ${tweetText}\n\n[View on Twitter](${tweetUrl})${mediaContent}`;
-
-    // Update README.md between markers
-    const readmePath = "README.md";
-    let readmeContent = fs.readFileSync(readmePath, "utf8");
-    const startMarker = "<!-- LATEST_TWEET_START -->";
-    const endMarker = "<!-- LATEST_TWEET_END -->";
-
-    if (readmeContent.includes(startMarker) && readmeContent.includes(endMarker)) {
-      const before = readmeContent.slice(0, readmeContent.indexOf(startMarker) + startMarker.length);
-      const after = readmeContent.slice(readmeContent.indexOf(endMarker));
-      readmeContent = `${before}\n${formattedTweet}\n${after}`;
-      fs.writeFileSync(readmePath, readmeContent, "utf8");
-      console.log("README.md updated with latest tweet.");
-    } else {
-      console.warn(`Markers ${startMarker} and ${endMarker} not found in README.md`);
-    }
-  } catch (error) {
-    console.error("Error fetching or updating tweet:", error);
-    process.exit(1);
-  }
-})();
-
-          '
+        run: node .github/scripts/update-tweet.js
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
         with:
-          branch: main 
+          branch: main
           message: "docs: Update latest tweet in README with media"
           committer_name: github-actions[bot]
           committer_email: github-actions[bot]@users.noreply.github.com
-          add: "README.md" 
+          add: README.md
