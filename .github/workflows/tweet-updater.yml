@@ -24,7 +24,7 @@ jobs:
       - name: Fetch latest tweet and update README
         env:
           CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
-          CONSUMER_SECRET: ${{ secrets.TWITTER_SECRET }}
+          CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
           ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
           ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
           TWITTER_HANDLE: sanskar2804 
