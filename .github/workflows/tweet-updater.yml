@@ -31,81 +31,87 @@ jobs:
         run: |
           node -e '
             const { TwitterApi } = require("twitter-api-v2");
-            const fs = require("fs");
+const fs = require("fs");
 
-            async function updateReadme() {
-              const client = new TwitterApi({
-                appKey: process.env.CONSUMER_KEY,
-                appSecret: process.env.CONSUMER_SECRET,
-                accessToken: process.env.ACCESS_TOKEN,
-                accessSecret: process.env.ACCESS_TOKEN_SECRET,
-              });
+(async () => {
+  try {
+    const client = new TwitterApi({
+      appKey: process.env.CONSUMER_KEY,
+      appSecret: process.env.CONSUMER_SECRET,
+      accessToken: process.env.ACCESS_TOKEN,
+      accessSecret: process.env.ACCESS_TOKEN_SECRET,
+    });
 
-              try {
-                // Get user ID from handle
-                const { data: user } = await client.v2.userByUsername(process.env.TWITTER_HANDLE);
-                if (!user) {
-                  console.error("Twitter user not found.");
-                  return;
-                }
+    // Hardcoded Twitter handle
+    const twitterHandle = "sanskar2804";
 
-                // Get latest tweet by user ID, including media attachments
-                const { data: tweets, includes } = await client.v2.userTimeline(user.id, {
-                  max_results: 5,
-                  "tweet.fields": "created_at,text,entities,attachments",
-                  "media.fields": "url,preview_image_url,type", // Get media details
-                  expansions: "attachments.media_keys", // Expand media_keys to media objects
-                  exclude: "replies,retweets"
-                });
+    // Get user info by handle
+    const { data: user } = await client.v2.userByUsername(twitterHandle);
+    if (!user) {
+      console.error("Twitter user not found.");
+      process.exit(1);
+    }
 
-                if (tweets && tweets.length > 0) {
-                  const latestTweet = tweets[0];
-                  let tweetText = latestTweet.text;
-                  const tweetUrl = `https://twitter.com/${process.env.TWITTER_HANDLE}/status/${latestTweet.id}`;
-                  let mediaContent = "";
+    // Fetch latest 5 tweets excluding replies and retweets
+    const timeline = await client.v2.userTimeline(user.id, {
+      max_results: 5,
+      exclude: ["replies", "retweets"],
+      expansions: ["attachments.media_keys"],
+      "tweet.fields": ["created_at", "text", "entities", "attachments"],
+      "media.fields": ["url", "preview_image_url", "type"],
+    });
 
-                  // Basic markdown linking for URLs if present
-                  if (latestTweet.entities && latestTweet.entities.urls) {
-                    latestTweet.entities.urls.forEach(url => {
-                      tweetText = tweetText.replace(url.url, `[${url.display_url || url.url}](${url.expanded_url})`);
-                    });
-                  }
+    if (!timeline.data || timeline.data.length === 0) {
+      console.log("No tweets found or unable to fetch latest tweet.");
+      process.exit(0);
+    }
 
-                  // Handle media attachments
-                  if (includes && includes.media && includes.media.length > 0) {
-                    const media = includes.media[0]; // Assuming only one media attachment for simplicity
-                    if (media.type === "photo" && media.url) {
-                      mediaContent = `\n\n![Tweet Image](${media.url})`;
-                    } else if (media.type === "video" || media.type === "animated_gif") {
-                      // For videos/GIFs, we can only link to a preview image (if available) or the tweet
-                      const previewUrl = media.preview_image_url || `https://placehold.co/400x200/cccccc/000000?text=Video+Preview`;
-                      mediaContent = `\n\n[![Video Preview](${previewUrl})](${tweetUrl})`;
-                    }
-                  }
-                  
-                  const formattedTweet = `🐦 Latest Tweet:\n\n> ${tweetText}\n\n[View on Twitter](${tweetUrl})${mediaContent}`;
-                  
-                  let readmeContent = fs.readFileSync("README.md", "utf8");
-                  const startMarker = "<!-- LATEST_TWEET_START -->";
-                  const endMarker = "<!-- LATEST_TWEET_END -->";
+    const latestTweet = timeline.data[0];
+    let tweetText = latestTweet.text;
 
-                  if (readmeContent.includes(startMarker) && readmeContent.includes(endMarker)) {
-                    const before = readmeContent.substring(0, readmeContent.indexOf(startMarker) + startMarker.length);
-                    const after = readmeContent.substring(readmeContent.indexOf(endMarker));
-                    readmeContent = `${before}\n${formattedTweet}\n${after}`;
-                  } else {
-                    console.warn("Markers for latest tweet not found in README.md. Please add them.");
-                  }
-                  fs.writeFileSync("README.md", readmeContent);
-                  console.log("README updated with latest tweet.");
-                } else {
-                  console.log("No tweets found or unable to fetch latest tweet.");
-                }
-              } catch (error) {
-                console.error("Error fetching or updating tweet:", error);
-              }
-            }
-            updateReadme();
+    // Linkify URLs inside tweet text
+    if (latestTweet.entities?.urls) {
+      for (const url of latestTweet.entities.urls) {
+        tweetText = tweetText.replace(url.url, `[${url.display_url || url.url}](${url.expanded_url})`);
+      }
+    }
+
+    const tweetUrl = `https://twitter.com/${twitterHandle}/status/${latestTweet.id}`;
+
+    // Handle media if any
+    let mediaContent = "";
+    if (timeline.includes?.media?.length) {
+      const media = timeline.includes.media[0]; // Only first media for simplicity
+      if (media.type === "photo" && media.url) {
+        mediaContent = `\n\n![Tweet Image](${media.url})`;
+      } else if ((media.type === "video" || media.type === "animated_gif") && media.preview_image_url) {
+        mediaContent = `\n\n[![Video Preview](${media.preview_image_url})](${tweetUrl})`;
+      }
+    }
+
+    const formattedTweet = `🐦 Latest Tweet:\n\n> ${tweetText}\n\n[View on Twitter](${tweetUrl})${mediaContent}`;
+
+    // Update README.md between markers
+    const readmePath = "README.md";
+    let readmeContent = fs.readFileSync(readmePath, "utf8");
+    const startMarker = "<!-- LATEST_TWEET_START -->";
+    const endMarker = "<!-- LATEST_TWEET_END -->";
+
+    if (readmeContent.includes(startMarker) && readmeContent.includes(endMarker)) {
+      const before = readmeContent.slice(0, readmeContent.indexOf(startMarker) + startMarker.length);
+      const after = readmeContent.slice(readmeContent.indexOf(endMarker));
+      readmeContent = `${before}\n${formattedTweet}\n${after}`;
+      fs.writeFileSync(readmePath, readmeContent, "utf8");
+      console.log("README.md updated with latest tweet.");
+    } else {
+      console.warn(`Markers ${startMarker} and ${endMarker} not found in README.md`);
+    }
+  } catch (error) {
+    console.error("Error fetching or updating tweet:", error);
+    process.exit(1);
+  }
+})();
+
           '
 
       - name: Commit changes
