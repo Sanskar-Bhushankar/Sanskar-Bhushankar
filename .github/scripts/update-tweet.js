@@ -20,7 +20,7 @@ const fs = require("fs");
 
     const timeline = await client.v2.userTimeline(user.id, {
       max_results: 5,
-      exclude: ["replies", "retweets"],
+      // exclude: ["replies", "retweets"],
       expansions: ["attachments.media_keys"],
       "tweet.fields": ["created_at", "text", "entities", "attachments"],
       "media.fields": ["url", "preview_image_url", "type"],
