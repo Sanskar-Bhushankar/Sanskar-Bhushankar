@@ -174,9 +174,25 @@
 
 
 
-<img src="https://svgimg.vercel.app/m.svg" width="400" height="250"></img>
-
 <img src ="https://svgimg.vercel.app/1b.svg"/>
+
+<table>
+  <tr>
+    <td>
+      <img src="https://svgimg.vercel.app/2b.svg"/>
+    </td>
+    <td><img src="https://svgimg.vercel.app/2b.svg"/></td>
+    <td>
+      <img src="https://svgimg.vercel.app/2b.svg"/>
+    </td>
+    <td><img src="https://svgimg.vercel.app/2b.svg"/></td>
+    <td>
+      <img src="https://svgimg.vercel.app/2b.svg"/>
+    </td>
+    <td><img src="https://svgimg.vercel.app/2b.svg"/></td>
+    
+  </tr>
+</table>
 
 
 
