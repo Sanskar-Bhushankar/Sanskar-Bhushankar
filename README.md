@@ -179,6 +179,21 @@
 <table>
   <tr>
     <td>
+      <img src="https://svgimg.vercel.app/5b.svg"/>
+    </td>
+    <td>
+      <img src="https://svgimg.vercel.app/5b.svg"/>
+    </td>
+    <td>
+      <img src="https://svgimg.vercel.app/5b.svg"/>
+    </td>
+   
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td>
       <img src="https://svgimg.vercel.app/2b.svg"/>
     </td>
     <td><img src="https://svgimg.vercel.app/2b.svg"/></td>
