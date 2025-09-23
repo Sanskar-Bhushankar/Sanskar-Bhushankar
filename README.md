@@ -157,6 +157,17 @@
                   <br/>
                 </p>
           </td>
+     <td>
+                <a href="https://learn.microsoft.com/en-us/users/sanskarbhushankar-9470/" target="_blank">
+                    <img src="https://assets.leetcode.com/static_assets/marketing/2024-100-new.gif" alt="Badge" width="70" height="70"/>
+                </a>
+                <p>
+                    100 Days of Code <br/>Leetcode<br>
+                    2025-08-09
+                  <br/>
+                  <br/>
+                </p>
+          </td>
     <td>
                 <a href="https://learn.microsoft.com/en-us/users/sanskarbhushankar-9470/" target="_blank">
                     <img src="https://assets.leetcode.com/static_assets/others/Top_SQL_50.gif" alt="Badge" width="70" height="70"/>
@@ -164,6 +175,18 @@
                 <p>
                     SQL 50 <br/>Leetcode<br>
                     2024-09-30
+                  <br/>
+                  <br/>
+                  <br/>
+                </p>
+            </td>
+     <td>
+                <a href="https://images.credly.com/images/247efe36-9fa6-4209-ad56-0fd522283872/blob" target="_blank">
+                    <img src="https://images.credly.com/images/247efe36-9fa6-4209-ad56-0fd522283872/blob" alt="Badge" width="70" height="70"/>
+                </a>
+                <p>
+                    AWS Educate ML Foundations
+                    2025-08-30
                   <br/>
                   <br/>
                   <br/>
